@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+</head>
+<body>
+    <!-- 
+        1. React Element types: String, function/class
+
+        i.	– wrapper
+            •	Header => Header Component
+            •	Content => Content component
+            •	Footer => Footer component
+        	Biểu diễn đơn giản với JSX
+
+     -->
+     <div id="root"></div>
+     <script type="text/babel">
+        function Header(){
+            //quy tắc viết component chữ cái đầu viết hoa
+            return (
+                <div className="header">Header</div>
+            )
+        }
+        function Content(){
+            return(
+                <div className="content">LO Content</div>
+            )
+        }
+        function Footer(){
+            return(
+                <div className="footer">Footer</div> 
+            )
+        }
+
+        // cú pháp của class
+        class Content2 extends React.Component {
+            render(){
+                return(
+                    <div className="content">LContent</div>
+                )
+            }
+        }
+        const app = (
+            <div className="wrapper">
+                <Header></Header>
+                <Content2></Content2>
+                <Footer></Footer>
+            </div>
+        )
+
+        ReactDOM.render(app, document.getElementById('root'))
+
+     </script>
+</body>
+</html>

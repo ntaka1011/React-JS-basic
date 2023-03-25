@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+</head>
+<body>
+    <!-- 
+        a.	React.createElement() -> React Element
+        b.	So sánh với document.createElement() -> DOM element
+        c.	Thay đổi: id, className, style,…
+        d.	Thêm: text, HTML
+        e.	Tạo <h1 title = “Hello” class=”heading”>Hello guys</h1>
+        f.	Tạo <ul> 
+                    <li>javascript</li>
+                    <li>ReactJS</li>
+            	</ul>
+        g.	Tạo <div class="post_item">
+                    <h2 title="Học React cơ bản tại f8">Học ReactJS</h2>
+                    <p>Học ReactJS từ cơ bản tới nâng cao</p>
+                </div>
+     -->
+
+    <script>
+        //DOM
+        const h1DOM = document.createElement('h1')
+        h1DOM.title = "Hello"
+        h1DOM.className = "heading"
+        h1DOM.innerText = "Hello guys"
+        console.log(h1DOM)
+        document.body.appendChild(h1DOM)
+
+
+        //React
+
+        // đối sô đầu tiền là: title
+        // đối số thứ hai là: props là object -> nó thể hiện đc các property như là id,className,...
+        // đối số thứ ba là: children -> đối với react thì nó là cái ở giữa bất cứ kiểu dữ liệu như obect,arr,...
+        const h1React = React.createElement('h1', {
+            title: "Hello",
+            className: "heading"
+        }, "Hello Guys!")
+
+        console.log(h1DOM)
+        console.log(h1React)
+
+
+        // bài 2: ul li
+        //DOM
+        const ulDOM = document.createElement('ul')
+        ulDOM.id = "ul-id"
+        ulDOM.style = 'color: red; font-size:30px'
+        const liDOM1 = document.createElement('li')
+        liDOM1.innerText = 'Javascript'
+        liDOM1.id = 'li-id'
+        const liDOM2 = document.createElement('li')
+        liDOM2.innerText = 'ReactJS'
+        ulDOM.append(liDOM1, liDOM2)
+        document.body.appendChild(ulDOM)
+
+        //REact
+        const ulReact = React.createElement(
+            'ul',
+            {
+                id: 'ul-id',
+                style: 'color: red; font-size: 30px'
+            },
+            React.createElement('li',{
+                id: 'li-id'
+            },"Javascript"),
+            React.createElement('li',{},"ReactJS")
+            
+        )
+        console.log(ulDOM)
+        console.log(ulReact)
+    </script>
+</body>
+</html>

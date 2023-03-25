@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .item{
+            background-color: palegoldenrod;
+            width: 150px;
+            height: 70px;
+            display: block;
+            text-align: center;
+            padding: 20px 40px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    
+        function Button({title, href, onClick}) {
+
+            let Component = 'button'
+
+            let props = {}
+
+            if(href){
+                Component = 'a'
+                props.href = href
+            }
+
+            if(onClick){
+                props.onClick = onClick
+            }
+
+            return(
+                <Component className="item" {...props}>{title}</Component>
+            )
+        }
+
+        function App() {
+            
+            return(
+                <div className="wrapper">
+                    <Button
+                        title = 'Click Me!'
+                        // href = 'https://www.google.com/'
+                        onClick = {() => console.log(Math.random())}
+                    />        
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App/>, document.getElementById('root'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>    
+    <script type="text/babel">
+        function PostItem(){
+            return(
+                <div className="post-item">
+                    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" alt=""/>
+                    <h2 className="post-title">Lachlan Dempsey</h2>
+                    <p className="post-desc">Ban cos chung kien chup hinh</p>
+                    <p className="post-published">One day</p>
+                </div>
+            )
+        }
+        const app = (
+            <div id="posts-list">
+                <PostItem></PostItem>
+                <PostItem></PostItem>
+                <PostItem></PostItem>
+            </div>
+        )
+        ReactDOM.render(app, document.getElementById('root'))
+    </script>
+</body>
+</html>

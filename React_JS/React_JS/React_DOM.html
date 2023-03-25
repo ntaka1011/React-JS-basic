@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+</head>
+<body>
+    <!-- 
+        1. tại sao phải sử dụng React-DOM
+        2. Tại sao phải tách React-DOM ra
+        3.	Render UI
+
+        <div class="post_item">
+                <h2 title="Học React cơ bản tại f8">Học ReactJS</h2>
+                <p>Học ReactJS từ cơ bản tới nâng cao</p>
+        </div>
+     -->
+
+    <div id="root"></div>
+     <script>
+        // react
+        const divDOM = React.createElement(
+            'div',
+            {
+                className: 'post_item'
+            }, 
+            React.createElement(
+                'h2',
+                {
+                    title: 'Học React cơ bản tại f8'
+                },
+                'Học ReactJS'),
+            React.createElement('p',{},"Học ReactJS từ cơ bản tới nâng cao")
+        )
+
+        // get Root Element
+        const root = document.getElementById('root')
+
+        //react->DOM -> render UI
+        // element: divDOM
+        // container: root
+        
+        // React17
+        ReactDOM.render(divDOM, root)
+
+        //React18
+        // const root = ReactDOM.createRoot(root)
+        // root.render(divDOM)
+     </script>
+</body>
+</html>
